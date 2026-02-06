@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparebare – AI‑drevet skattoptimalisering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sparebare</h1>
+        <p>Din AI‑drevne skatteassistent</p>
+    </header>
+    <main>
+        <!-- Onboarding / Login Section -->
+        <section id="login">
+            <h2>Logg inn</h2>
+            <p>Velg en av metodene nedenfor for å komme i gang.</p>
+            <div class="login-buttons">
+                <button onclick="alert('BankID-integrasjon krever manuell konfigurasjon.')">Logg inn med BankID</button>
+                <button onclick="alert('Google OAuth integreres på serversiden.')">Logg inn med Google</button>
+                <button onclick="alert('E‑postregistrering implementeres senere.')">Logg inn med e‑post</button>
+            </div>
+        </section>
+
+        <!-- File Upload Section -->
+        <section id="upload">
+            <h2>Last opp skattemelding</h2>
+            <p>Du kan laste opp skattemeldingen din som PDF, JSON eller XML. Filer lagres kryptert og brukes bare til analyse.</p>
+            <form id="upload-form" onsubmit="handleUpload(event)">
+                <input type="file" id="taxFile" accept=".pdf,.json,.xml" required>
+                <button type="submit">Analyser</button>
+            </form>
+        </section>
+
+        <!-- Suggestions Section -->
+        <section id="suggestions" class="hidden">
+            <h2>Forslag til optimalisering</h2>
+            <p>Her vil du få presentert forslag til fradrag og endringer når analysen er gjennomført.</p>
+            <ul id="suggestion-list">
+                <!-- Dynamically populated -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Sparebare. Alle rettigheter reservert.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
