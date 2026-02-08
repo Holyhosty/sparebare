@@ -17,7 +17,7 @@ function handleUpload(event) {
     formData.append('taxFile', fileInput.files[0]);
 
     // Send filen til backend for analyse. Juster URL-en hvis serveren kjører et annet sted.
-    fetch('/upload', {
+    fetch('https://sparebare-backend-1.onrender.com/upload', {
         method: 'POST',
         body: formData
     })
