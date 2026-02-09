@@ -20,21 +20,21 @@ function handleUpload(event) {
     fetch('https://sparebare-backend-1.onrender.com/upload', {
         method: 'POST',
         body: formData
-    })
+    })    
     .then(response => response.json())
     .then(data => {
         if (data.error) {
             alert('Feil: ' + data.error);
             return;
         }
-        const suggestions = data.suggestions || [];
-        suggestions.forEach(suggestion => {
-            const li = document.createElement('li');
-            li.textContent = `${suggestion.description} – ${suggestion.effect}`;
-            suggestionList.appendChild(li);
-        });
-        suggestionsSection.classList.remove('hidden');
-    })
+li.textContent = `${suggestion.description} – ${suggestion.effect}`;
+if (suggestion.details) {
+  const small = document.createElement('div');
+  small.style.opacity = '0.8';
+  small.style.fontSize = '0.9em';
+  small.textContent = suggestion.details;
+  li.appendChild(small);
+})
     .catch(err => {
         console.error('Upload error', err);
         alert('Noe gikk galt under opplastingen.');
